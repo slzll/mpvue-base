@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "i-tab-bar": "../../../static/iView/tab-bar/index",
+    "i-tab-bar-item": "../../../static/iView/tab-bar-item/index",
+    "i-button": "../../../static/iView/button/index",
+    "i-toast": "../../../static/iView/toast/index",
+    "i-cell-group": "../../../static/iView/cell-group/index",
+    "i-cell": "../../../static/iView/cell/index",
+    "i-drawer": "../../../static/iView/drawer/index",
+    "i-load-more": "../../../static/iView/load-more/index"
+  },
+  "navigationBarTitleText": "考试中心"
+}

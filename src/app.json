@@ -1,0 +1,76 @@
+{
+  "pages": [
+    "pages/index/main",
+    "pages/logs/main",
+    "pages/counter/main",
+    "pages/courseCenter/main",
+    "pages/examList/main",
+    "pages/personalCenter/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ec4747",
+    "navigationBarTitleText": "网络学院",
+    "navigationBarTextStyle": "white",
+    "onReachBottomDistance": 10
+  },
+  "tabBar": {
+    "color": "#999",
+    "backgroundColor": "#fafafa",
+    "selectedColor": "#333",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/main",
+        "iconPath": "static/tabs/home.png",
+        "selectedIconPath": "static/tabs/home-active.png"
+      },
+      {
+        "text": "课程",
+        "pagePath": "pages/logs/main",
+        "iconPath": "static/tabs/course.png",
+        "selectedIconPath": "static/tabs/course-active.png"
+      },
+      {
+        "text": "考试",
+        "pagePath": "pages/logs/main",
+        "iconPath": "static/tabs/exam.png",
+        "selectedIconPath": "static/tabs/exam-active.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/logs/main",
+        "iconPath": "static/tabs/person.png",
+        "selectedIconPath": "static/tabs/person-active.png"
+      }
+    ],
+    "items": [
+      {
+        "name": "首页",
+        "pagePath": "pages/index/main",
+        "icon": "static/tabs/home.png",
+        "activeIcon": "static/tabs/home-active.png"
+      },
+      {
+        "name": "课程",
+        "pagePath": "pages/logs/main",
+        "icon": "static/tabs/course.png",
+        "activeIcon": "static/tabs/course-active.png"
+      },
+      {
+        "text": "考试",
+        "pagePath": "pages/logs/main",
+        "iconPath": "static/tabs/exam.png",
+        "selectedIconPath": "static/tabs/exam-active.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/logs/main",
+        "iconPath": "static/tabs/person.png",
+        "selectedIconPath": "static/tabs/person-active.png"
+      }
+    ],
+    "position": "bottom"
+  }
+}
