@@ -4,7 +4,7 @@ const API_URL = '/jy365/api'
 const Mobile = API_URL + '/mobile'
 
 export const Api = {
-  Login: { url: Mobile + '/Login', data: {} },
+  Login: { url: API_URL + '/Login', data: {} },
   GetLink: { url: Mobile + '/GetLink', data: { page: 1, rows: 10 } },
   GetCourseInfoList: {
     url: Mobile + '/GetCourseInfoList',

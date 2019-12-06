@@ -1,9 +1,9 @@
 {
   "usingComponents": {
-    "i-tab-bar": "../../../static/iView/tab-bar/index",
-    "i-tab-bar-item": "../../../static/iView/tab-bar-item/index",
-    "i-button": "../../../static/iView/button/index",
-    "i-toast": "../../../static/iView/toast/index"
+    "i-tab-bar": "../../static/iView/tab-bar/index",
+    "i-tab-bar-item": "../../static/iView/tab-bar-item/index",
+    "i-button": "../../static/iView/button/index",
+    "i-toast": "../../static/iView/toast/index"
   },
   "navigationBarTitleText": "主页"
 }

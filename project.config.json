@@ -26,6 +26,7 @@
 	"projectname": "mpvue-base",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"libVersion": "2.9.4",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -35,13 +36,36 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
-		"miniprogram": {
+		"gamePlugin": {
 			"current": -1,
 			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "课程中心",
+					"pathName": "pages/courseCenter/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "考试中心",
+					"pathName": "pages/examCenter/main",
+					"query": "",
+					"scene": null
+				}
+			]
 		}
 	}
 }

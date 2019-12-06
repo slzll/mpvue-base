@@ -1,106 +1,105 @@
 <template>
-  <div id="app_index">
-    <div class="container">
-      <div class="header">
-        <swiper
-          class="swiper-container"
-          :indicator-dots="indicatorDots"
-          :autoplay="autoplay"
-          :interval="interval"
-          :duration="duration"
-        >
-          <div v-for="(item,index) in swiperData" :key="index">
-            <swiper-item>
-              <error-img :src="item.Icon" class-name="slide-image"/>
-            </swiper-item>
-          </div>
-        </swiper>
-      </div>
-      <div class="scroll-view-container">
-        <scroll-view class="icons_list_container" scroll-x="true">
-          <div class="icons_list">
-            <div class="icons_list_item">
-              <a class="icons_list_item_link" href="pages/myCourse.html">
-                <img class="icons_list_item_img" src="/static/images/my_course.png" alt>
-                <p class="icons_list_item_title">我的课程</p>
-              </a>
-            </div>
-            <div class="icons_list_item">
-              <a class="icons_list_item_link" href="pages/notice.html">
-                <img class="icons_list_item_img" src="/static/images/notice_ico.png" alt>
-                <p class="icons_list_item_title">三会一课</p>
-              </a>
-            </div>
-            <div class="icons_list_item">
-              <a class="icons_list_item_link" href="pages/newsCenter.html">
-                <img class="icons_list_item_img" src="/static/images/news_ico.png" alt>
-                <p class="icons_list_item_title">资讯中心</p>
-              </a>
-            </div>
-            <div class="icons_list_item">
-              <a class="icons_list_item_link" href="pages/rankList.html">
-                <img class="icons_list_item_img" src="/static/images/rank_ico.png" alt>
-                <p class="icons_list_item_title">排行榜</p>
-              </a>
-            </div>
-            <div class="icons_list_item">
-              <a class="icons_list_item_link" href="pages/classGarden.html">
-                <img class="icons_list_item_img" src="/static/images/class_ico.png" alt>
-                <p class="icons_list_item_title">班级园地</p>
-              </a>
-            </div>
-            <div class="icons_list_item">
-              <a class="icons_list_item_link" href="pages/ebookList.html">
-                <img class="icons_list_item_img" src="/static/images/ebook_ico.png" alt>
-                <p class="icons_list_item_title">电子书</p>
-              </a>
-            </div>
-            <div class="icons_list_item">
-              <a class="icons_list_item_link" href="pages/communication.html">
-                <img class="icons_list_item_img" src="/static/images/communication_ico.png" alt>
-                <p class="icons_list_item_title">交流评论</p>
-              </a>
-            </div>
-          </div>
-        </scroll-view>
-      </div>
-      <div class="boundary"></div>
-      <div class="recommend_course">
-        <div class="common_title">
-          <img class="common_title_icon" src="/static/images/red_ico.png" alt>
-          <span>课程推荐</span>
+  <div class="app_index container_bottom">
+    <div class="header">
+      <swiper
+        class="swiper-container"
+        :indicator-dots="indicatorDots"
+        :autoplay="autoplay"
+        :interval="interval"
+        :duration="duration"
+      >
+        <div v-for="(item,index) in swiperData" :key="index">
+          <swiper-item>
+            <error-img :src="item.Icon" class-name="slide-image"/>
+          </swiper-item>
         </div>
-        <div class="recommend_course_list">
-          <ul class="clearfix">
-            <li
-              v-for="item in courseList"
-              :key="item.CourseId"
-              @click="chooseCourse(item.CourseId,item.CourseType,item.OnlineUrl)"
-            >
-              <a href="javascript:;">
-                <error-img
-                  class-name="recommend_course_img"
-                  :src="item.CourseImg"
-                  @error="changeImgSrc($event)"
-                />
-                <h4>{{item.CourseName}}</h4>
-                <span class="name">讲师：{{item.TeacherName}}</span>
-                <span class="credit red">{{item.Credit}}学分</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      </swiper>
     </div>
+    <div class="scroll-view-container">
+      <scroll-view class="icons_list_container" scroll-x="true">
+        <div class="icons_list">
+          <div class="icons_list_item">
+            <a class="icons_list_item_link" hover-class="none" href="pages/myCourse.html">
+              <img class="icons_list_item_img" src="/static/images/my_course.png" alt>
+              <p class="icons_list_item_title">我的课程</p>
+            </a>
+          </div>
+          <div class="icons_list_item">
+            <a class="icons_list_item_link" hover-class="none" href="pages/notice.html">
+              <img class="icons_list_item_img" src="/static/images/notice_ico.png" alt>
+              <p class="icons_list_item_title">三会一课</p>
+            </a>
+          </div>
+          <div class="icons_list_item">
+            <a class="icons_list_item_link" hover-class="none" href="pages/newsCenter.html">
+              <img class="icons_list_item_img" src="/static/images/news_ico.png" alt>
+              <p class="icons_list_item_title">资讯中心</p>
+            </a>
+          </div>
+          <div class="icons_list_item">
+            <a class="icons_list_item_link" hover-class="none" href="pages/rankList.html">
+              <img class="icons_list_item_img" src="/static/images/rank_ico.png" alt>
+              <p class="icons_list_item_title">排行榜</p>
+            </a>
+          </div>
+          <div class="icons_list_item">
+            <a class="icons_list_item_link" hover-class="none" href="pages/classGarden.html">
+              <img class="icons_list_item_img" src="/static/images/class_ico.png" alt>
+              <p class="icons_list_item_title">班级园地</p>
+            </a>
+          </div>
+          <div class="icons_list_item">
+            <a class="icons_list_item_link" hover-class="none" href="pages/ebookList.html">
+              <img class="icons_list_item_img" src="/static/images/ebook_ico.png" alt>
+              <p class="icons_list_item_title">电子书</p>
+            </a>
+          </div>
+          <div class="icons_list_item">
+            <a class="icons_list_item_link" hover-class="none" href="pages/communication.html">
+              <img class="icons_list_item_img" src="/static/images/communication_ico.png" alt>
+              <p class="icons_list_item_title">交流评论</p>
+            </a>
+          </div>
+        </div>
+      </scroll-view>
+    </div>
+    <div class="boundary"></div>
+    <div class="recommend_course">
+      <div class="common_title">
+        <img class="common_title_icon" src="/static/images/red_ico.png" alt>
+        <span>课程推荐</span>
+      </div>
+      <ul class="recommend_course_list">
+        <li
+          v-for="item in courseList"
+          :key="item.CourseId"
+          @click="chooseCourse(item.CourseId,item.CourseType,item.OnlineUrl)"
+        >
+          <a hover-class="none" class="" href="javascript:;">
+            <error-img
+              class-name="recommend_course_img"
+              :src="item.CourseImg"
+              @error="changeImgSrc($event)"
+            />
+            <h4>{{item.CourseName}}</h4>
+            <span class="name">讲师：{{item.TeacherName}}</span>
+            <span class="credit red">{{item.Credit}}学分</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <tab-bar current="home"/>
   </div>
 </template>
 
 <script>
   import ErrorImg from '@/components/errorImg'
+  import TabBar from '@/components/tabBar'
   import { GetLink, Login, GetCourseInfoList } from '@/utils/api'
 
   export default {
     components: {
+      TabBar,
       ErrorImg
     },
     data () {
@@ -156,7 +155,6 @@
       }
     },
     onLoad () {
-      this.login()
       this.getSwipeLink()
       this.getCourseList()
     }
@@ -233,45 +231,44 @@
     padding: toRpx(30px);
 
     .recommend_course_list {
-      ul {
-        @include flex(flex-start);
-        flex-wrap: wrap;
+      @include flex(flex-start);
+      flex-wrap: wrap;
 
-        li {
-          margin-top: toRpx(20px);
-          float: left;
-          width: 50%;
+      li {
+        margin-top: toRpx(20px);
+        float: left;
+        width: toRpx(330px);
 
+        &:nth-child(even) {
+          margin-left: toRpx(30px);
+        }
 
-          a {
+        a {
+          width: 100%;
+
+          .recommend_course_img {
             width: 100%;
+            height: toRpx(178px);
+          }
 
-            .recommend_course_img {
-              @include wh(336px, 178px);
+          h4 {
+            font-size: toRpx(28px);
+            line-height: 2;
+            @extend %ellipsis;
+          }
+
+          span {
+            font-size: toRpx(24px);
+            line-height: 1.5;
+
+            &.name {
+              float: left;
+              color: #999;
             }
 
-            h4 {
-              padding: 0 toRpx(10px);
-              font-size: toRpx(28px);
-              line-height: 2;
-              @extend %ellipsis;
-            }
-
-            span {
-              font-size: toRpx(24px);
-              line-height: 1.5;
-
-              &.name {
-                float: left;
-                color: #999;
-                padding-left: toRpx(10px);
-              }
-
-              &.credit {
-                float: right;
-                color: $brand-primary;
-                padding-right: toRpx(10px);
-              }
+            &.credit {
+              float: right;
+              color: $brand-primary;
             }
           }
         }

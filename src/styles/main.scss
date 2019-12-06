@@ -1,0 +1,277 @@
+@import "mixins";
+
+html {
+  background: $fill-base;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  color: $color-text-base;
+  background-color: $fill-base;
+  min-height: 100vh;
+  width: 100%;
+}
+
+img {
+  color: transparent;
+  font-size: 0;
+  vertical-align: middle;
+  border: 0px;
+  -ms-interpolation-mode: bicubic;
+}
+
+*[contenteditable] {
+  -webkit-user-select: auto !important;
+}
+
+// Reset fonts for relevant elements
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+input, textarea {
+  border: none;
+  background-color: #fff;
+}
+
+button {
+  outline: none;
+}
+
+ul,
+ol {
+  display: list-item;
+  list-style: none;
+}
+
+// Remove the clear button of a text input control in IE10+
+input::-ms-clear, input::-ms-reveal {
+  display: none;
+}
+
+input[type=checkbox], input[type=radio] {
+  margin: 4px 0 0;
+  line-height: normal;
+  @include square(30px);
+}
+
+textarea {
+  display: block;
+  resize: none;
+  width: 100%;
+}
+
+*:focus {
+  outline: none;
+}
+
+a {
+  background: transparent;
+  text-decoration: none;
+  outline: none;
+  color: $color-text-base;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:active {
+    text-decoration: none;
+  }
+
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+// Headers
+h1, h2, h3, h4, h5, h6 {
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  font-weight: normal;
+  color: inherit;
+}
+
+//左浮动
+.pull-left {
+  @extend %pull-left;
+}
+
+//右浮动
+.pull-right {
+  @extend %pull-right;
+}
+
+//清除浮动
+.clearFix {
+  @extend %clearFix;
+}
+
+//超出显示...
+.ellipsis {
+  @extend %ellipsis;
+}
+
+//没有数据
+.no-more-data {
+  width: 100%;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  padding: toRpx(15px) 0;
+  background-color: $fill-base;
+
+  &:before, &:after {
+    content: '————';
+    margin: 0 toRpx(10px);
+  }
+}
+
+
+//容器
+.container_top {
+  padding-top: toRpx(92px);
+  min-height: 100vh;
+}
+
+.container_bottom {
+  padding-bottom: toRpx(100px);
+  min-height: 100vh;
+}
+
+.container_both {
+  padding-top: toRpx(92px);
+  padding-bottom: toRpx(98px);
+  min-height: 100vh;
+}
+
+//iconfont
+.webapp {
+  color: #333;
+}
+
+//高亮
+.highlight {
+  color: $color-highlight;
+}
+
+//表单
+.form-group {
+  font-size: 14px;
+  border-radius: toRpx(10px);
+  overflow: hidden;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  line-height: toRpx(50px);
+  padding: toRpx(19px) toRpx(20px);
+  font-size: 14px;
+  color: $color-text-thirdly;
+  background-color: #fff;
+  @extend %border-base;
+}
+
+.checkbox, .radio {
+  label {
+    width: auto;
+    @include ht-lineHt(90px);
+  }
+}
+
+.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
+  @include square(35px);
+  vertical-align: middle;
+}
+
+//水平表单
+.form-horizontal {
+  .form-control {
+    display: inline-block;
+    width: 70%;
+  }
+
+  .control-label {
+    padding-top: toRpx(7px);
+    margin-bottom: 0;
+    text-align: right;
+  }
+
+  .checkbox, radio {
+    padding-top: 7px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+//过渡动画
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0;
+}
+
+//向左滑动
+.slide-left-enter-active, .slide-left-leave-active {
+  transition: all 0.5s;
+}
+
+.slide-left-enter, .slide-left-leave-active {
+  transform: translateX(10rem);
+  opacity: 0;
+}
+
+//向右滑动
+.slide-right-enter-active, .slide-right-leave-active {
+  transition: all 0.5s;
+}
+
+.slide-right-enter, .slide-right-leave-active {
+  transform: translateX(-10rem);
+  opacity: 0;
+}
+
+//向下滑动
+.slide-bottom-enter-active, .slide-bottom-leave-active {
+  transition: all 0.5s;
+}
+
+.slide-bottom-enter, .slide-bottom-leave-to {
+  transform: translateY(100vh);
+  opacity: 0;
+}
+
+//向上滑动
+.slide-top-enter-active, .slide-top-leave-active {
+  transition: all 0.5s;
+}
+
+.slide-top-enter, .slide-top-leave-to {
+  transform: translateY(100vh);
+  opacity: 0;
+}
+
+/* 自定义navbar 常用图片 */
+.slide_img {
+  @include wh(35px, 29px);
+}
+
+.search_img {
+  @include wh(39px, 39px);
+}

@@ -1,5 +1,24 @@
 <script>
+  import { Login } from '@/utils/api'
+
   export default {
+    methods: {
+      doLogin () {
+        console.log('登录')
+        mpvue.login({
+          async success (res) {
+            console.log('login success', res)
+            const code = res.code
+            let loginRes = await Login({ code })
+            console.log(loginRes)
+            // if()
+          },
+          fail (res) {
+            console.log('login fail', res)
+          }
+        })
+      }
+    },
     created () {
       // 调用API从本地缓存中获取数据
       /*
@@ -23,20 +42,32 @@
         logs.unshift(Date.now())
         mpvue.setStorageSync('logs', logs)
       }
+
+      /* 微信小程序鉴权 */
+      let loginFlag = mpvue.getStorageSync('skey')
+      if (loginFlag) {
+        mpvue.checkSession({
+          success () {
+            console.log('success')
+          },
+          fail () {
+            console.log('check login', this)
+            this.doLogin()
+          }
+        })
+      } else {
+        this.doLogin()
+      }
     },
     log () {
       console.log(`log at:${Date.now()}`)
+    },
+    onLaunch () {
+      mpvue.hideTabBar()
     }
   }
 </script>
 
-<style>
-  /* this rule will be remove */
-  * {
-    box-sizing: border-box;
-    transition: width 2s;
-    -moz-transition: width 2s;
-    -webkit-transition: width 2s;
-    -o-transition: width 2s;
-  }
+<style lang="scss">
+  @import "./styles/main";
 </style>

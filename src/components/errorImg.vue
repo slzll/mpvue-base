@@ -22,7 +22,6 @@
           return this.src ? this.src : this.errSrc
         },
         set (val) {
-          console.log(val)
           this.src = val
         }
       }

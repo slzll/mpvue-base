@@ -21,7 +21,7 @@ request.interceptors.response.use(
     // 存储aspxauth身份验证
     let auth = response.headers.aspxauth || response.headers.ASPXAUTH
     if (auth) {
-      mpvue.setStorageSync('ASPXAUTH', auth)
+      mpvue.setStorageSync('ASPXAUTH', auth[0] || auth)
     }
     return response.data
   },

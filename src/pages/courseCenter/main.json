@@ -7,7 +7,9 @@
     "i-cell-group": "../../../static/iView/cell-group/index",
     "i-cell": "../../../static/iView/cell/index",
     "i-drawer": "../../../static/iView/drawer/index",
-    "i-load-more": "../../../static/iView/load-more/index"
+    "i-load-more": "../../../static/iView/load-more/index",
+    "i-nav-bar": "../../../static/components/nav-bar/index"
   },
-  "navigationBarTitleText": "课程分类"
+  "navigationBarTitleText": "课程分类",
+  "navigationStyle": "custom"
 }
