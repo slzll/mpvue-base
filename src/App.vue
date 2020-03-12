@@ -1,24 +1,5 @@
 <script>
-  import { Login } from '@/utils/api'
-
   export default {
-    methods: {
-      doLogin () {
-        console.log('登录')
-        mpvue.login({
-          async success (res) {
-            console.log('login success', res)
-            const code = res.code
-            let loginRes = await Login({ code })
-            console.log(loginRes)
-            // if()
-          },
-          fail (res) {
-            console.log('login fail', res)
-          }
-        })
-      }
-    },
     created () {
       // 调用API从本地缓存中获取数据
       /*
@@ -28,7 +9,6 @@
        * 百度：mpvue === swan, mpvuePlatform === 'swan'
        * 支付宝(蚂蚁)：mpvue === my, mpvuePlatform === 'my'
        */
-
       let logs
       if (mpvuePlatform === 'my') {
         logs = mpvue.getStorageSync({ key: 'logs' }).data || []
@@ -41,22 +21,6 @@
         logs = mpvue.getStorageSync('logs') || []
         logs.unshift(Date.now())
         mpvue.setStorageSync('logs', logs)
-      }
-
-      /* 微信小程序鉴权 */
-      let loginFlag = mpvue.getStorageSync('skey')
-      if (loginFlag) {
-        mpvue.checkSession({
-          success () {
-            console.log('success')
-          },
-          fail () {
-            console.log('check login', this)
-            this.doLogin()
-          }
-        })
-      } else {
-        this.doLogin()
       }
     },
     log () {

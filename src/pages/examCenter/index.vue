@@ -55,7 +55,9 @@
             <p style="overflow: hidden;">
               <span class="course_score pull-left red">{{item.Credit}}学分</span>
               <span class="course_select_flag pull-right"
-                    :class="item.SelectFlag=='已选'?'choose':''">{{item.SelectFlag}}</span>
+                    :class="item.SelectFlag=='已选'?'choose':''">
+                {{item.SelectFlag}}
+              </span>
             </p>
           </div>
         </a>
@@ -72,8 +74,10 @@
   import TabBar from '@/components/tabBar'
   import NavBar from '@/components/navBar'
   import { GetExamType, GetExamList } from '@/utils/api'
+  import checkLogin from '@/mixins/checkLogin'
 
   export default {
+    mixins: [checkLogin],
     components: { NavBar, TabBar },
     data () {
       return {

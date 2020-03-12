@@ -3,6 +3,7 @@
 	"setting": {
 		"urlCheck": true,
 		"es6": false,
+		"enhance": false,
 		"postcss": true,
 		"preloadBackgroundData": false,
 		"minified": true,
@@ -18,7 +19,8 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"bundle": false
 	},
 	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
@@ -26,7 +28,7 @@
 	"projectname": "mpvue-base",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
-	"libVersion": "2.9.4",
+	"libVersion": "2.10.3",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -62,6 +64,13 @@
 					"id": 1,
 					"name": "考试中心",
 					"pathName": "pages/examCenter/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/main",
 					"query": "",
 					"scene": null
 				}

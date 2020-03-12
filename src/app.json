@@ -5,7 +5,8 @@
     "pages/counter/main",
     "pages/courseCenter/main",
     "pages/examCenter/main",
-    "pages/personalCenter/main"
+    "pages/personalCenter/main",
+    "pages/login/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -15,6 +16,7 @@
     "onReachBottomDistance": 10
   },
   "tabBar": {
+    "custom": true,
     "color": "#999",
     "backgroundColor": "#fafafa",
     "selectedColor": "#333",
@@ -44,33 +46,7 @@
         "iconPath": "static/tabs/person.png",
         "selectedIconPath": "static/tabs/person-active.png"
       }
-    ],
-    "items": [
-      {
-        "name": "首页",
-        "pagePath": "pages/index/main",
-        "icon": "static/tabs/home.png",
-        "activeIcon": "static/tabs/home-active.png"
-      },
-      {
-        "name": "课程",
-        "pagePath": "pages/courseCenter/main",
-        "icon": "static/tabs/course.png",
-        "activeIcon": "static/tabs/course-active.png"
-      },
-      {
-        "text": "考试",
-        "pagePath": "pages/examCenter/main",
-        "iconPath": "static/tabs/exam.png",
-        "selectedIconPath": "static/tabs/exam-active.png"
-      },
-      {
-        "text": "我的",
-        "pagePath": "pages/personalCenter/main",
-        "iconPath": "static/tabs/person.png",
-        "selectedIconPath": "static/tabs/person-active.png"
-      }
-    ],
-    "custom": true
-  }
+    ]
+  },
+  "usingComponents": {}
 }

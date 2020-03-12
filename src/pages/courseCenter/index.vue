@@ -8,7 +8,7 @@
         <img class="search_img" src="/static/images/search.png" alt="">
       </div>
     </nav-bar>-->
-    <i-nav-bar title="课程中心" color="white" background="#ec4747">
+    <i-nav-bar :title="title" color="white" background="#ec4747">
       <div class="canui-head-box" slot="left">
         <navigator class="slide_img_view icon-back" hover-class="none" @click="toggleLeft()">
           <img class="slide_img" src="/static/images/slide.png" alt="">
@@ -24,7 +24,7 @@
           <div class="channel_list_container" :style="{paddingTop: navigationBarHeight}">
             <ul class="channel_list">
               <li class="channel_list_item" v-for="(item,i) in channelData" :key="item.ChannelId">
-                <div class="parent_tree_container" @click="getCourseInfo(item.ChannelId)">
+                <div class="parent_tree_container" @click="changeChannel(item)">
                   <div class="channel_list_link common_title ellipsis">
                     <img class="common_title_icon" src="/static/images/red_ico.png" alt="">
                     <span>{{item.ChannelName}}</span>
@@ -83,8 +83,10 @@
   import TabBar from '@/components/tabBar'
   import ErrorImg from '@/components/errorImg'
   import { GetChannelInfoList, GetCourseInfoList } from '@/utils/api'
+  import checkLogin from '@/mixins/checkLogin'
 
   export default {
+    mixins: [checkLogin],
     components: {
       TabBar,
       ErrorImg,
@@ -92,6 +94,7 @@
     },
     data () {
       return {
+        title: '课程中心',
         navigationBarHeight: '',
         leftDrawerHeight: '',
         courseData: [],
@@ -142,6 +145,10 @@
           return
         }
         this.courseData = [...this.courseData, ...list]
+      },
+      changeChannel (item) {
+        this.title = item.ChannelName
+        this.getCourseInfo(item.ChannelId)
       }
     },
     onReady () {

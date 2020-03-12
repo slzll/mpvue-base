@@ -23,6 +23,10 @@ request.interceptors.response.use(
     if (auth) {
       mpvue.setStorageSync('ASPXAUTH', auth[0] || auth)
     }
+    if (response.data.Type === 401) {
+      mpvue.redirectTo({ url: '/pages/login/main' })
+      return
+    }
     return response.data
   },
   (err) => {

@@ -96,8 +96,10 @@
   import ErrorImg from '@/components/errorImg'
   import TabBar from '@/components/tabBar'
   import { GetLink, Login, GetCourseInfoList } from '@/utils/api'
+  import checkLogin from '@/mixins/checkLogin'
 
   export default {
+    mixins: [checkLogin],
     components: {
       TabBar,
       ErrorImg
